@@ -4,7 +4,7 @@ import React from "react";
 const chatbot = () => {
     return (
         <>
-            <h1>chatbots</h1>
+            <h1>chatbot app</h1>
             
         </>
     )
