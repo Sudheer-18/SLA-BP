@@ -1,8 +1,11 @@
+import Chatbot from "./components/chatbot";
 
-function App() {
- 
+const App = () => {
+
   return (
-  <></>
+    <>
+      <Chatbot />
+    </>
   );
 }
 
