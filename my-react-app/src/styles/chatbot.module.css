@@ -1,62 +1,80 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: black;
-}
-
 .container {
-    height: 500px;
-    width: 400px;
-    background-color: whitesmoke;
+    width: 600px;          
+    height: 600px;         
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
-.part1 {
+.chatBox {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
+    background-color: #fff;
 }
 
-.messages {
+.messages p {
+    margin: 12px 0;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.bot {
+    color: green;
+}
+
+.user {
+    color: blue;
+    text-align: right;
+}
+
+.inputSection {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.part2 {
-    height: 80px;
+    padding: 12px;
+    border-top: 1px solid #ddd;
     background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.inputContainer {
-    width: 90%;
-    display: flex;
-    gap: 10px;
 }
 
 .input {
     flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
 }
 
 .sendButton {
-    padding: 10px 20px;
-    background-color: dodgerblue;
+    padding: 12px 18px;
+    font-size: 16px;
+    background-color: #4caf50;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sendButton:hover {
+    background-color: #45a049;
+}
+
+
+@keyframes dots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1s steps(4, end) infinite;
+  display: inline-block;
+  white-space: pre;
 }
