@@ -9,14 +9,14 @@ const cors= require("cors")
 const bodypasrer = require("body-parser")
 const mongoose = require("mongoose")
 const nodemailer = require("nodemailer");
+const route =  require('./Routes/user');
+const route1 = require('./Routes/chatbot');
 
-
-console.log(process.env.GEMINI_API_KEY)
 
 
 var app = express();
 
-mongoose.connect("mongodb+srv://kosireddysudheer803:pMImhxbsZ4QqAYDH@cluster0.stqqg.mongodb.net/PS")
+mongoose.connect("mongodb+srv://kosireddysudheer803:pMImhxbsZ4QqAYDH@cluster0.stqqg.mongodb.net/BP")
 .then(result => {
   console.log("Connected")
 })
@@ -31,7 +31,8 @@ const handlePort = () =>{
 app.use(cors())  
 app.use(bodypasrer.json());
 
-// app.use("/api",roters);
+app.use("/",route);
+app.use("/api",route1);
 
 
 
