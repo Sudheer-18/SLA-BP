@@ -11,23 +11,23 @@ const ChatBot = async (req, res) => {
   }
 
   const prompt = `
-You are an intelligent assistant that answers only in valid JSON format.
+        You are an intelligent assistant that answers only in valid JSON format.
 
-🔹 Behavior:
-- Detect if the input is a question or a topic.
-- Respond clearly, accurately, and concisely.
+        🔹 Behavior:
+        - Detect if the input is a question or a topic.
+        - Respond clearly, accurately, and concisely.
 
-🔹 Rules:
-- You must return a response in this exact format:
-{
-  "response": "your complete answer here"
-}
-- Never add triple backticks ( \`\`\` ), markdown, or extra explanation outside JSON.
-- The value inside "response" must be a plain string answer only.
+        🔹 Rules:
+        - You must return a response in this exact format:
+        {
+          "response": "your complete answer here"
+        }
+        - Never add triple backticks ( \`\`\` ), markdown, or extra explanation outside JSON.
+        - The value inside "response" must be a plain string answer only.
 
-Now reply to:
-"${topic}"
-`.trim();
+        Now reply to:
+        "${topic}"
+        `.trim();
 
   try {
     const apiResponse = await axios.post(GEMINI_API_URL, {
