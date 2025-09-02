@@ -8,7 +8,7 @@ const Admin = async(req,res) => {
         return res.status(200).json("Recorded added")
     })
     .catch(err => {
-        return res.status(200).json("Something wrong record not added")
+        return res.status(500).json("Something wrong record not added")
     })
 }
 
