@@ -12,8 +12,6 @@ const nodemailer = require("nodemailer");
 const route =  require('./Routes/user');
 const route1 = require('./Routes/chatbot');
 
-
-
 var app = express();
 
 mongoose.connect("mongodb+srv://kosireddysudheer803:pMImhxbsZ4QqAYDH@cluster0.stqqg.mongodb.net/BP")
